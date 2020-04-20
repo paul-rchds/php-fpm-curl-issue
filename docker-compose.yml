@@ -1,0 +1,13 @@
+version: '3'
+services:
+  php:
+    build: ./php
+    ports:
+        - 443:443
+        - 80:80
+        
+  python:
+    build: ./python
+    volumes:
+      - ./python/:/code/
+
