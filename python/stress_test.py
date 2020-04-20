@@ -17,8 +17,7 @@ async def fetch(session, url):
 async def main():
    async with aiohttp.ClientSession() as session:
       tasks = [fetch(session, URL) for _ in range(NUMBER_OF_REQUESTS)]
-      responses = await asyncio.gather(*tasks)
-      print(responses)
+      await asyncio.gather(*tasks)
 
 
 if __name__ == '__main__':
